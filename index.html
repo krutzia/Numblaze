@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>⚡ Numblaze — Number Guessing Game</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ⚡ Custom favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Confetti library (for win animation) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <div class="game-container">
+    <!-- ===== HEADER SECTION ===== -->
+    <header>
+      <h1>⚡ Numblaze</h1>
+      <p class="subtitle">Can you conquer the hidden number?</p>
+    </header>
+
+    <!-- ===== MAIN GAME PANEL ===== -->
+    <div class="game-panel">
+      <div class="difficulty">
+        <label for="difficulty">Choose Difficulty:</label>
+        <select id="difficulty">
+          <option value="easy">Easy (1–50)</option>
+          <option value="medium">Medium (1–100)</option>
+          <option value="hard">Hard (1–200)</option>
+        </select>
+      </div>
+
+      <p id="message" class="hint">🎮 Select difficulty and press Start!</p>
+
+      <div class="stats">
+        <p>⏱ Time: <span id="timeLeft">--</span>s</p>
+        <p>Attempts: <span id="attempts">0</span></p>
+        <p>Score: <span id="score">0</span></p>
+        <p>🏆 High Score: <span id="highScore">0</span></p>
+      </div>
+
+      <div class="input-area">
+        <input id="guessInput" type="number" placeholder="Enter your guess..." disabled />
+        <button id="guessBtn" disabled>Guess</button>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn">🚀 Start Game</button>
+        <button id="resetBtn" disabled>🔄 Reset</button>
+      </div>
+    </div>
+
+    <!-- ===== FOOTER SECTION ===== -->
+    <footer>Created with ❤️ by krutzia</footer>
+  </div>
+
+  <!-- Sound Effects -->
+  <audio id="correctSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9dbb5f6de1.mp3?filename=correct-answer-37948.mp3"></audio>
+  <audio id="wrongSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_dae4cb9a.mp3?filename=error-126627.mp3"></audio>
+
+  <!-- Game Script -->
+  <script src="script.js"></script>
+</body>
+</html>
